@@ -1,5 +1,5 @@
 /*
-Copyright 2019 The KubeSphere authors.
+Copyright 2020 The KubeSphere Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -26,6 +26,10 @@ import (
 
 type FakeStorageV1alpha1 struct {
 	*testing.Fake
+}
+
+func (c *FakeStorageV1alpha1) ProvisionerCapabilities() v1alpha1.ProvisionerCapabilityInterface {
+	return &FakeProvisionerCapabilities{c}
 }
 
 func (c *FakeStorageV1alpha1) StorageClassCapabilities() v1alpha1.StorageClassCapabilityInterface {

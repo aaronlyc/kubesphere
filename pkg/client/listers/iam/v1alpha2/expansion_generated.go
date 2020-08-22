@@ -26,6 +26,14 @@ type GlobalRoleListerExpansion interface{}
 // GlobalRoleBindingLister.
 type GlobalRoleBindingListerExpansion interface{}
 
+// LoginRecordListerExpansion allows custom methods to be added to
+// LoginRecordLister.
+type LoginRecordListerExpansion interface{}
+
+// RoleBaseListerExpansion allows custom methods to be added to
+// RoleBaseLister.
+type RoleBaseListerExpansion interface{}
+
 // UserListerExpansion allows custom methods to be added to
 // UserLister.
 type UserListerExpansion interface{}

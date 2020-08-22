@@ -18,7 +18,7 @@ package v1alpha2
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kubesphere.io/kubesphere/pkg/apis/tenant/v1alpha1"
+	typesv1alpha1 "kubesphere.io/kubesphere/pkg/apis/types/v1beta1"
 )
 
 const (
@@ -37,14 +37,7 @@ const (
 type WorkspaceTemplate struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              WorkspaceTemplateSpec `json:"spec,omitempty"`
-}
-
-type WorkspaceTemplateSpec struct {
-	v1alpha1.WorkspaceSpec `json:",inline"`
-	// authorized clusters
-	// +optional
-	Clusters []string `json:"clusters,omitempty"`
+	Spec              typesv1alpha1.FederatedWorkspaceSpec `json:"spec,omitempty"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
